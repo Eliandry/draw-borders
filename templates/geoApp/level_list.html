@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{%block content%}
+{%load static%}
+
+
+    <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for level in level_list %}
+          <div class="col">
+          <div class="card shadow-sm">
+            <img src="/media/{{ level.Img }}" role="img" class="bd-placeholder-img card-img-top" width="100%" height="225">
+            <div class="card-body">
+              <h4>{{level.name}}</h4>
+              <p class="card-text">{{level.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Играть</button>
+
+                <small class="text-muted">Сложность: {{level.level}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+{% for level in level_list %}
+{%endfor%}
+{%endblock%}
