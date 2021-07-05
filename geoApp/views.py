@@ -6,4 +6,5 @@ from django.views.generic import ListView, DetailView, View
 class MainView(ListView):
     model = Level
 
-
+class LevelDetail(DetailView):
+    model=Level
