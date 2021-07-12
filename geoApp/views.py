@@ -8,3 +8,12 @@ class MainView(ListView):
 
 class LevelDetail(DetailView):
     model=Level
+
+
+
+def result(request,pk):
+    draw=request.POST.get('imageView')
+    lvl=Level.objects.get(id=pk)
+    clean=lvl.img
+    return render(request,'geoApp/result.html',{'draw':draw,'clean':clean})
+
